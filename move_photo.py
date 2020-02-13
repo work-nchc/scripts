@@ -1,5 +1,5 @@
 import sys
-sys.stderr = open('D:/move_photo.log', 'w')
+sys.stderr = open('D:/move_photo.log', 'a')
 
 from glob import glob
 from os import mkdir
