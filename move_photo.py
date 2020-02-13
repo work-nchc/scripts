@@ -1,3 +1,6 @@
+import sys
+sys.stderr = open('D:/move_photo.log', 'w')
+
 from glob import glob
 from os import mkdir
 from time import strftime, sleep
