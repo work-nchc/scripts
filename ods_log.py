@@ -44,7 +44,10 @@ while True:
                 name_vdi = 'N:/nchc/log_vdi/users\\vdi_{}.csv'.format(name)
                 if name_vdi in ls_vdi:
                     with open(name_vdi, encoding='utf-8') as in_vdi:
-                        out_vdi.writerow(next(in_vdi).strip().split('\t'))
+                        try:
+                            out_vdi.writerow(next(in_vdi).strip().split('\t'))
+                        except StopIteration:
+                            pass
                         for data_vdi in in_vdi:
                             data_vdi = data_vdi.strip().split('\t')
                             if data_vdi:
