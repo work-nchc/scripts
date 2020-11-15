@@ -27,7 +27,10 @@ while True:
                 name_dl = 'N:/nchc/log_dl/users\\dl_{}.csv'.format(name)
                 if name_dl in ls_dl:
                     with open(name_dl, encoding='utf-8') as in_dl:
-                        out_dl.writerow(next(in_dl).strip().split('\t'))
+                        try:
+                            out_dl.writerow(next(in_dl).strip().split('\t'))
+                        except StopIteration:
+                            pass
                         for data_dl in in_dl:
                             data_dl = data_dl.strip().split('\t')
                             if data_dl:
